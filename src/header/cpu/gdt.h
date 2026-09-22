@@ -35,6 +35,14 @@ struct SegmentDescriptor {
     uint8_t type_bit   : 4;
     uint8_t non_system : 1;
     // TODO : Continue SegmentDescriptor definition
+    uint8_t previlege_bit : 2; // Descriptor previlege level
+    uint8_t present_bit : 1; //Segment present
+    uint8_t segment_limit : 4; //Segment Limit
+    uint8_t available_bit : 1; //AVL 
+    uint8_t l_bit : 1; //L
+    uint8_t default_bit : 1; //D/B (Default operation size)
+    uint8_t granularity_bit : 1;// Granularity
+    uint8_t base_high; //Bit 24 -- 31
 
 } __attribute__((packed));
 
