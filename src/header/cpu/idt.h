@@ -38,9 +38,9 @@ struct IDTGate {
     uint16_t segment;
     uint8_t _reserved : 5;
     uint8_t _r_bit_1 : 3;
-    uint8_t _r_bit_2 : 3
+    uint8_t _r_bit_2 : 3;
     uint8_t gate_32 : 1;
-    uint8_t _r_bit_3 : 1
+    uint8_t _r_bit_3 : 1;
     uint8_t dpl : 2;
     uint8_t valid_bit: 1;
     uint16_t offset_high;
@@ -54,7 +54,7 @@ struct IDTGate {
  */
 // TODO : Implement
 struct InterruptDescriptorTable {
-    struct IDTGate[IDT_MAX_ENTRY_COUNT];
+    struct IDTGate table[IDT_MAX_ENTRY_COUNT];
 }__attribute__((packed));
 
 /**

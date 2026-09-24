@@ -2,11 +2,14 @@
 #include "header/cpu/idt.h"
 #include "header/cpu/gdt.h"
 #include "header/cpu/interrupt.h"
+#include "header/cpu/portio.h"
 
 extern void* isr_stub_table[64];
-struct IDTR _idt_idtr{
-
-}
+struct InterruptDescriptorTable interrupt_descriptor_table = {0};
+struct IDTR _idt_idtr = {
+    .size    = sizeof(interrupt_descriptor_table) - 1,
+    .address = &interrupt_descriptor_table.table[0],
+};
 
 void initialize_idt(void) {
     for (int i = 0; i < 64; i++){
