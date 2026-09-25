@@ -60,4 +60,4 @@
 
 ‎ . ݁⋆ ۶ৎ ݁˖ . ݁
 
-![Maskot Kelompok](mascot.jpg)
+![Maskot Kelompok](mascot.jpeg)
